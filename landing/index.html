@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <title>Document</title>
+</head>
+<body>
+    <header></header>
+    <main>
+        <div id="tareas"> 
+            <h1>Notas</h1>
+      
+            <button id="add" class="btn-action">Agregar Nueva nota</button> 
+      
+          </div>
+          <div id="modal" class="modal">
+
+            <h2>NUEVA NOTA</h2>
+      
+            <form id="task-form" class="form-section"> 
+      
+              <label for="title-field">Titulo:</label>  
+              <input type="text" id="title-field" class="form-field" required> 
+      
+              <label for="description-field">Descripcion:</label>  
+              <input type="text" id="description-field" class="form-field" required > 
+      
+              <label for="completed">Completed:</label>  
+              <select id="completed-field" class="form-field" required> 
+                <option value="false" selected>false</option>
+                <option value="true" >true</option>
+              </select>
+              
+              <label for="priority-field">Prioridad:</label> 
+              <select id="priority-field" class="form-field" required> 
+                <option value="Alta" selected>Alta</option>
+                <option value="Media" >Media</option>
+                <option value="Baja" >Baja</option>
+              </select>
+      
+              <label for="dueDate-field">Fecha de Entrega:</label> 
+              <input type="date" id="dueDate-field" class="form-field" required> 
+      
+              <label for="tag-field">Etiqueta:</label> 
+              <input type = "text" id="tag-field" class="form-field" required> 
+               
+      
+              <button type="submit" class="btn-submit">Guardar Nota</button> 
+      
+            </form>
+      
+          </div>
+          <br>
+        <h1>Tareas</h1>
+    
+        <form id="filter-form">
+         <div id="filter-section">
+           <input type="text"   id="text" placeholder="Titulo o descripción" class="filter-field">
+           <input type="number" id="rating" placeholder="Calificacion" class="filter-field">
+           <input type="number" id="price-min" placeholder="Precio mínimo" class="filter-field">
+           <input type="number" id="price-max" placeholder="Precio máximo" class="filter-field">
+           <button type="submit" id="apply-filters">Aplicar filtros</button>
+           <button type="reset" id="reset-filters">Restablecer</button>
+         </div>
+       </form>
+   
+       <br>
+        <div class="table-container">
+            <table id="data-table">
+            <tr>
+                <th>Id</th>
+                <th>Titulo</th>
+                <th>Descripcion</th>
+                <th>Completado</th>
+                <th>Prioridad</th>
+                <th>Tipo</th>
+                <th>Fecha</th>
+
+            </tr>
+            <tbody id="data-table-body">
+                <!-- Aquí se generará la tabla dinámicamente -->
+              </tbody>
+            </table>
+        </div>
+        <div id="message-not-found">
+            <p>No hay juegos disponibles en este momento.</p>
+          </div>
+      
+        </main>
+        <script src="./javascript/utils.js"></script>
+        <script src="./javascript/script.js"></script>
+        <script src="./javascript/fetch-api.js"></script>
+    </main>
+
+    
+</body>
+</html>

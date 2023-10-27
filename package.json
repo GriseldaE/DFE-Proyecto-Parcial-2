@@ -1,0 +1,19 @@
+{
+  "name": "dfe-proyecto-parcial-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "live-server src",
+    "watch:css": "node-css landing/css/style.css --watch",
+    "start": "concurrently \"npm run watch:css\" \"npm run serve\""
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "live-server": "^1.2.2",
+    "node-css": "^0.1.0"
+  }
+}
