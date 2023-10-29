@@ -9,7 +9,7 @@
     "watch:css": "node-css landing/css/style.css --watch",
     "start": "concurrently \"npm run watch:css\" \"npm run serve\""
   },
-  "author": "",
+  "author": "po",
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^8.2.2",
