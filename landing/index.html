@@ -22,12 +22,6 @@
     <br>
 
     <form id="filter-form" class="filter-section">
-
-      <select id="task-filter" class="filter-field" placeholder="Notas actuales"> 
-        <option value="" selected>Todas las tareas</option>
-        
-      </select>
-
       <input type="text" id="title-filter" placeholder="Titulo" class="filter-field"> 
 
       <select id="priority-filter" class="filter-field" placeholder="Prioridad"> 
@@ -39,14 +33,6 @@
       </select>
 
       <input type="text" id="tag-filter" placeholder="Etiqueta" class="filter-field"> 
-      
-       <select type="text" id="completed-filter" placeholder="completed" class="filter-field"> 
-        <option value="" selected>Status</option> 
-        <option value="false" >false</option> 
-        <option value="true" >true</option>   
-      </select>
-
-      <input type="date" id="date-filter" placeholder="Fecha" class="filter-field"> 
 
       <button type="submit" id="apply-filters" class="btn-submit">Consultar</button> 
       <button type="reset" id="reset-filters" class="btn">Refresh</button> 
@@ -82,7 +68,10 @@
     </div>
 
     <div id="modal-background" class="modal-background">
- <div id="modal" class="modal">
+     
+
+    </div>
+    <div id="modal" class="modal">
 
       <h2>NUEVA TAREA</h2>
 
@@ -118,9 +107,7 @@
 
       </form>
 
-    </div>
-
-    </div>
+      </div>
 
    
 

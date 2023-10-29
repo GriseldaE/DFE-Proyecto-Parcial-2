@@ -38,9 +38,9 @@ class Tarea {
   }
 
 }
-function getTareasData(title,priority, completed,dueDate, tag ) {
+function getTareasData(title,priority, tag ) {
 
-  const url = buildGetTareasDataUrl(title,priority, completed, dueDate, tag);
+  const url = buildGetTareasDataUrl(title,priority, tag);
 
   fetchAPI(url, 'GET')
     .then(data => {
@@ -131,6 +131,7 @@ function displayTareasTable(tareas) {
   tareas.forEach(tarea => {
     const row = document.createElement('tr');
     row.innerHTML = `
+      
       <td>${tarea.id}</td>
       <td class="editable" contenteditable="false">${tarea.title}</td>
       <td class="editable" contenteditable="false">${tarea.description}</td>
@@ -264,12 +265,10 @@ function resetTareas() {
 function searchTareas() {
   const title = document.getElementById('title-filter').value;
   const priority = document.getElementById('priority-filter').value;
-  const completed = document.getElementById('completed-filter').value;
-  const dueDate = document.getElementById('date-filter').value;
   const tag = document.getElementById('tag-filter').value;
  
 
-  getTareasData(title,priority, completed, dueDate,tag );
+  getTareasData(title,priority,tag );
 }
 function initAddTareaButtonsHandler() {
 
@@ -340,23 +339,7 @@ function initDeleteTareaButtonHandler() {
 
 }
 
-function displayTareaOptions(tareas) {
 
-  const taskFilter = document.getElementById('task-filter');
-  
-
-  const taskModal = document.getElementById('priority-field');
-
-
-  tareas.forEach(tarea => {
-
-    const optionFilter = document.createElement('option');
-    optionFilter.value = tarea.title;
-    optionFilter.text = `${tarea.title} - ${tarea.priority}`;
-    taskFilter.appendChild(optionFilter);
-  });
-
-}
 function showLoadingMessage() {
   const message = document.getElementById('message');
 
@@ -391,7 +374,7 @@ function getTareaData() {
   fetchAPI(`${apiURL}/tasks`, 'GET')
     .then(data => {
       const tasksList = mapAPIToTareaDescriptors(data);
-      displayTareaOptions(tasksList);
+      
     });
 
 }
